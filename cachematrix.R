@@ -8,7 +8,7 @@
 ##               or not it returns an inverse matrix or a NULL value.
 ##
 ##
-## cacheSolveMatrix : 
+## cacheSolve : 
 ##                  Input: a matrix. Example : x where x=rbind(c(1, -1/4), c(-1/4, 1)) and the list vector('z') from makeCacheMatrix 
 ##                         (implicit - no need to explicite mention this one)
 ##                  Output: Either an inversed matrix.[or if you are messing with the input then an error message]  
@@ -89,7 +89,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-## cacheSolveMatrix : 
+## cacheSolve : 
 ##                  Input: a matrix. Example : x where x=rbind(c(1, -1/4), c(-1/4, 1)) and the list vector('z') from makeCacheMatrix 
 ##                         (implicit - no need to explicite mention this one)
 ##                  Output: Either an inversed matrix.[or if you are messing with the input then an error message]  
@@ -97,7 +97,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ##               or not it returns an inverse matrix or a valid error message.(to help you with the debugging).
 ##
 
-cacheSolveMatrix <- function(x, ...) {
+cacheSolve <- function(x, ...) {
   
   ## Print the original Matrix
   message("------X-------\nOriginal Matrix:")
@@ -144,39 +144,39 @@ x <- rbind(c(1, -1/4), c(-1/4, 1))
 z<- makeCacheMatrix(x)
 
 
-##Calling cacheSolveMatrix with X(the actual inversible matrix) and Z(the list of vectors from makeCacheMatrix) as parameters
+##Calling cacheSolve with X(the actual inversible matrix) and Z(the list of vectors from makeCacheMatrix) as parameters
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
-##Re calling the cacheSolveMatrix with same matrix as above to show that it returns the cache data
+##Re calling the cacheSolve with same matrix as above to show that it returns the cache data
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
-##Re calling the cacheSolveMatrix with new inversible matrix to show that it returns the new data accordingly
+##Re calling the cacheSolve with new inversible matrix to show that it returns the new data accordingly
 x <- rbind(c(1, 1/2), c(1/2, 1))
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
-##Re calling the cacheSolveMatrix with same matrix as above to show that it returns the cache data
+##Re calling the cacheSolve with same matrix as above to show that it returns the cache data
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
 
 
 ###Invalid Scenario 1: with non inversible matrix
 x=rbind(c(3,6,3),c(5,2,1),c(1,2,1))
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
 
 ###Invalid Scenario 2: with non matrix vector
 x=c(3,6,3)
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
 
 ###Invalid Scenario 3: with non square matrix
 x=rbind(c(3,6,3))
 t1 <- 0
-t1 <- cacheSolveMatrix(x)
+t1 <- cacheSolve(x)
 print(t1)
